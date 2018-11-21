@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class = "col-12">
+      <img id="burger" src="/assets/img/burger.png" alt="burger icon">
+      <h1 class="text-center">Eat-Da-Burger!</h1><br><br>
+    </div><!--col-12-->
+    
+    <div class = "col-sm-6 col-xs-12">
+      <h2>Burgers that are Not devoured!</h2>
+      <ol>
+        <!--Flip burger status to devoured, if burger has not been devoured-->
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burger-block burgerDevoured=true}}
+        {{/unless}}
+        {{/each}}
+      </ol>
+    </div><!--col-6-->
+    <div class = "col-sm-6 col-xs-12">
+      <h2>Burgers that are devoured!</h2>
+      <ol>
+        <!--Flip burger status to not devoured, if burger has been devoured-->
+        {{#each burgers}}
+        {{#if devoured}}
+        {{> burgers/burger-block burgerDevoured=false}}
+        {{/if}}
+        {{/each}}
+      </ol>
+    </div>
+    <!--Col-6-->
+    <div class = "col-12">
+      
+      <form class="create-form">
+
+        <div class="form-group">
+          <!--label for="burger">Burger Name:</label-->
+          <input type="text" id="burger" name="name">
+        </div>
+
+        <div class="form-group">
+          <label for="burgerState">What is the state of the burger?</label><br>
+          <input type="radio" name="isDevoured" value="1" checked>Devoured!<br>
+          <input type="radio" name="isDevoured" value="0">Not Devoured!
+        </div>
+
+        <div class = "text-center">
+          <button type="submit" class = "btn btn-primary">Submit</button>
+        </div><br>
+        <p class = "text-center">Enter a burger you want to eat, Click the "Submit" Button.</p>
+      </form>
+    </div>
+    <!--col-12-->
+    
+  </div>
+  <!--row-->
+</div>
+<!--container-->
