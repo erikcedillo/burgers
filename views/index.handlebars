@@ -31,7 +31,7 @@
         {{#each burgerData}}
         {{#unless this.devoured}}
         <p><button class="btn btn-primary btn-sm devour-button" name="{{this.id}}" type="submit">Devour it!</button>&nbsp; &nbsp; 
-          {{this.burger_name}}
+          {{this.burgers_name}}
         </p>
           {{/unless}}
           {{/each}}
@@ -40,7 +40,7 @@
     </ul>
   </div>
   <div class="col-md-4" id="burgerDiv">
-    <img src="/assets/img/burger.png" id="burger">
+    <img src="" id="burger">
   </div>
   <div class="col-md-4">
     <ul class="list-group">
@@ -50,7 +50,7 @@
         {{!-- Put the devoured burgers in the devoured area --}}
          {{#each burgerData}}
             {{#if this.devoured}}
-             <p>{{this.burger_name}}</p>
+             <p>{{this.burgers_name}}</p>
            {{/if}}
           {{/each}}
       </li>
