@@ -9,7 +9,7 @@ var burger = {
 
     insertOne: function (val, cb) {
         //Inserting a burger into the burgers table
-        orm.insertOne("burgers", "burger_name", val, function (result) {
+        orm.insertOne("burgers", "burgers_name", val, function (result) {
             cb(result);
         });
     },
